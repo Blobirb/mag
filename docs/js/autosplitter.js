@@ -178,8 +178,8 @@ _autosplitter = (function () {
 		// Show stats for the last speedrun on the menu or credits, hide them during gameplay
 		$("#speedrun_stats").toggle(
 			state.show_speedrun_stats &&
-			(state.in_menu ||
-				(state.in_credits && state.speedrun_mode_active))
+				(state.in_menu ||
+					(state.in_credits && state.speedrun_mode_active))
 		);
 
 		if (state.in_level) {
@@ -295,14 +295,20 @@ _autosplitter = (function () {
 	Handling alternate keyboard inputs
 	***********/
 
-	$(document).keypress(function (e) {
+	$(document).keydown(function (e) {
 		// Detect press on "Z"
 		if (e.which == 90 || e.which == 122) {
 			// Press on W instead
 			var downEvent = jQuery.Event("keydown");
 			downEvent.which = 87;
 			$(document).trigger(downEvent);
+		}
+	});
 
+	$(document).keyup(function (e) {
+		// Detect press on "Z"
+		if (e.which == 90 || e.which == 122) {
+			// Press on W instead
 			var upEvent = jQuery.Event("keyup");
 			upEvent.which = 87;
 			$(document).trigger(upEvent);
