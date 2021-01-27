@@ -120,6 +120,10 @@ canvas {
 	user-select: none;
 }
 
+.extra-speedrun-stats-modal table td {
+	white-space: nowrap;
+}
+
 .levels-times-title {
 	margin-top: 20px;
 	width: 100%;

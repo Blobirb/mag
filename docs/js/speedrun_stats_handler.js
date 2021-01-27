@@ -27,6 +27,7 @@ _speedrunStatsHandler = function () {
 		speedrun_stats.loadlessTime = 0;
 		speedrun_stats.extraLoadTime = 0;
 		speedrun_stats.totalJumps = 0;
+		speedrun_stats.totalDoubleJumps = 0;
 		speedrun_stats.totalFireballs = 0;
 		speedrun_stats.totalTeleports = 0;
 		speedrun_stats.totalDeaths = 0;
@@ -38,8 +39,10 @@ _speedrunStatsHandler = function () {
 	var onSound = function (soundName) {
 		switch (soundName) {
 			case "jump":
-			case "doublejump":
 				speedrun_stats.totalJumps += 1;
+				break;
+			case "doublejump":
+				speedrun_stats.totalDoubleJumps += 1;
 				break;
 			case "attackmiss":
 				speedrun_stats.totalFireballs += 1;
@@ -87,6 +90,7 @@ _speedrunStatsHandler = function () {
 
 		$("#total_deaths_stat").text(speedrun_stats.totalDeaths);
 		$("#total_jumps_stat").text(speedrun_stats.totalJumps);
+		$("#total_doublejumps_stat").text(speedrun_stats.totalDoubleJumps);
 		$("#total_fireballs_stat").text(speedrun_stats.totalFireballs);
 		$("#total_teleports_stat").text(speedrun_stats.totalTeleports);
 
