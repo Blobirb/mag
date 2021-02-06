@@ -2,7 +2,7 @@ _autosplitter = (function () {
 	var chestsInLevel = [2, 2, 2, 2, 3, 3, 3, 2, 3, 2, 2, 3, 5, 4, 1];
 
 	var wrs = [
-		"5.15",
+		"5.11",
 		"7.16",
 		"7.96",
 		"3.45",
