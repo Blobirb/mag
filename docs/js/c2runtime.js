@@ -10287,7 +10287,7 @@ function tc(e) {
 			return
 
 		// TAS - hijacking keyboard inputs into the coffee script
-		if (window.tas_mode_active) {
+		if (TAS_MODE) {
 			window.coffee._keydown(function (p) {
 				e.Lp(p);
 			});
